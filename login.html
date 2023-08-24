@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Entrar / Cadastrar</title>
+    <link rel="stylesheet" href="./css/log.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="container-forms">
+            <div class="container-info">
+                <div class="info-item item-login">
+                    <div class="table">
+                        <div class="table-cell">
+                            <p>
+                                Já tem conta?
+                            </p>
+                            <div class="form-item log-in view-login">
+                                <div class="table">
+                                    <div class="table-cell">
+                                        <form action="login.php" method="POST">
+                                            <input id="usuario" name="usuario" placeholder="Usuário" type="text" />
+                                            <input id="senha" name="senha" placeholder="Senha" type="password" />
+                                            <button type="submit" class="btn">Entrar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-item item-signup">
+                    <div class="table">
+                        <div class="table-cell">
+                            <p>
+                                Não tem conta?
+                            </p>
+                            <div class="form-item sign-up view-signup">
+                                <div class="table">
+                                    <div class="table-cell">
+                                        <form method="POST" action="cadastro_salvo.php"
+                                            onsubmit="return validarTelefone()" ;>
+                                            <input id="nome" name="nome" placeholder="Nome Completo" type="text"
+                                                required />
+                                            <input id="email" name="email" placeholder="Email" type="email" required />
+                                            <input id="telefone" name="telefone" placeholder="Telefone" type="text"
+                                                maxlength="11" />
+                                            <input id="usuario" name="usuario" placeholder="Usuário" type="text"
+                                                required />
+                                            <input id="senha" name="senha" placeholder="Senha" type="password"
+                                                required />
+                                            <button type="submit" class="btn">Cadastrar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-form">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validarTelefone() {
+            var telefone = document.getElementById("telefone").value;
+            var pattern = /^[0-9]+$/;
+
+            if (!pattern.test(telefone)) {
+                alert("Por favor, insira apenas números no campo de telefone.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

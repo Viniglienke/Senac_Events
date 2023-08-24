@@ -1,0 +1,107 @@
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+  
+  .menu-open, .menu-close {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .menu-open span, .menu-close:before, .menu-close:after {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    width: 100%;
+    height: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-open span {
+    top: 50%;
+    margin-top: -2px;
+  }
+  
+  .menu-close:before, .menu-close:after {
+    top: 50%;
+    margin-top: -2px;
+  }
+  
+  .menu-close:before {
+    transform: rotate(45deg);
+  }
+  
+  .menu-close:after {
+    transform: rotate(-45deg);
+  }
+  
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    transform: translateX(-200px);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    margin-bottom: 10px;
+  }
+  
+  .menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+  }
+  
+  .menu a:hover {
+    color: #999;
+  }
+  
+  .menu-toggle:checked ~ .menu {
+    transform: translateX(0);
+  }
+  
+  .menu-toggle:checked ~ .menu-open span {
+    opacity: 0;
+  }
+  
+  .menu-toggle:checked ~ .menu-close:before,
+  .menu-toggle:checked ~ .menu-close:after {
+    top: 50%;
+    margin-top: -2px;
+    transform: rotate(0);
+  }
+  
+  @media (max-width: 500px) {
+    .menu {
+      width: 100%;
+      transform: translateX(-100%);
+    }
+    
+    .menu-toggle:checked ~ .menu {
+      transform: translateX(0);
+    }
+  }
+ 

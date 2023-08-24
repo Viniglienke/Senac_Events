@@ -1,0 +1,25 @@
+@charset "UTF-8";
+body{
+    margin: auto;
+    background-color: #00ffea31;
+    color: rgb(0,0,0);
+}
+h1 {
+    top: center;
+    margin-left: 0.5%;
+    margin-top: 0.5%;
+}
+.form {
+    margin-left: 0.5%;
+    margin-top: 0.5%;
+    background-color: #020202;
+
+}
+.cadastro {
+    margin-top: 1.5%;
+}
+.menu {
+    top: center;
+    margin-left: 0.5%;
+    margin-top: 0.5%;
+}
